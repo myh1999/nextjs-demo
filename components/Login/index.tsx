@@ -11,11 +11,16 @@ import {
   ModalFooter,
 } from "@heroui/modal";
 import { Spacer } from "@heroui/react";
+import { signIn } from "next-auth/react";
 
 import { GithubIcon, GoogleIcon } from "@/components/icons";
 
 export default function App() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  const handleOnPress = async (provider: string) => {
+    await signIn(provider);
+  };
 
   return (
     <>
@@ -57,6 +62,7 @@ export default function App() {
                     startContent={
                       <GithubIcon className="absolute left-0 ml-3" />
                     }
+                    onPress={() => handleOnPress("github")}
                   >
                     Continue with Github
                   </Button>

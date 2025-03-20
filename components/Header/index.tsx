@@ -14,8 +14,7 @@ import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 
-import Login from "./login";
-
+import Login from "@/components/Login";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
@@ -26,7 +25,7 @@ import {
   Logo,
 } from "@/components/icons";
 
-export const Navbar = () => {
+export const Header = () => {
   const searchInput = (
     <Input
       aria-label="Search"
